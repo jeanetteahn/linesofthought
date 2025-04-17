@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="css/html5reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="dist/css/lightbox.css" rel="stylesheet" />
-    <title>Personal Art Gallery</title>
+    <title>Lines of Thought</title>
     <!-- Modified from ChatGPT -->
     <!-- Navigation bar code taken from Flex homework -->
 </head>
-<body class="flex-container">
+<body>
 <header>
 <a class = "skip" href="#skip">Skip to Main Content</a>
     <nav clas="navbar">
@@ -19,7 +19,7 @@
       <img src="images/logo.png" alt="Logo for Lines of Thought featuring a black Ionic column on the left and stacked serif text reading “Lines of Thought” on the right." id = "logo">
       </a>
       <ul class="nav_links">
-        <li class="nav_item"><a href="home.html">Home</a></li>
+        <li class="nav_item"><a href="home.html" class="active">Home</a></li>
         <li class="nav_item"><a href="art.html">Art</a></li>
         <li class="nav_item"><a href="sculpture.html">Sculpture</a></li>
         <li class="nav_item"><a href="architecture.html">Architecture</a></li>
@@ -27,12 +27,34 @@
     </div>
   </nav>
 </header>
-<main id="skip">
-<h1>Welcome to My Gallery!</h1>
-<p>I'm Jeanette Ahn, and this is a personal archive of art, architecture, and sculpture that has moved me—across time, style, and place.</p>
-<p>Each piece you’ll find here is more than a masterpiece; it’s a moment I’ve chosen to hold onto. I’ve included my reflections alongside each work to share how it resonates with me and how it fits into the broader story of art history—how form, emotion, and time meet.</p>
-<p>This is not just a gallery. It’s a conversation across centuries.</p>
-<p>Thank you for visiting.</p>
+<main class="intro-gallery" id="skip">
+<h1><span class="typewriter">Welcome to Lines of Thought!</span></h1>
+<p>Welcome to <em>Lines of Thought</em>—a personal archive of artworks, architecture, and sculpture that have lingered with me across time, style, and place.</p>
+<p>Each piece in this gallery is more than a masterpiece. It’s a moment that speaks—a line of thought made visible. I’ve gathered these works not only for their beauty, but for the quiet impact they’ve left on how I see, feel, and remember.</p>
+<p>Alongside each, you’ll find my reflections—thoughts that trace the emotional and historical contours of form, light, and meaning.</p>
+<p>Thank you for stepping into this conversation across centuries.</p>
+</main>
+<main class=intro-gallery>
+<section class="collection-preview">
+  <h2>Inside the Collection</h2>
+  <div class="preview-grid">
+    <div class="preview-card">
+      <img src="images/Klimt_art.jpg" alt="Detail of Gustav Klimt’s The Tree of Life, featuring swirling golden branches." class="preview-img">
+      <h3><a href="art.html">Art</a></h3>
+      <p>Paintings that linger—where color, light, and texture become memory.</p>
+    </div>
+    <div class="preview-card">
+      <img src="images/Pieta_sculpture.jpg" alt="Michelangelo’s Pietà sculpture, depicting Mary holding Jesus after the crucifixion." class="preview-img">
+      <h3><a href="sculpture.html">Sculpture</a></h3>
+      <p>Form frozen in time. Organic, abstract, and full of quiet force.</p>
+    </div>
+    <div class="preview-card">
+      <img src="images/AngkorWat_architecture.jpg" alt="Angkor Wat temple reflecting in the water showcasing Khmer architectural splendor." class="preview-img">
+      <h3><a href="architecture.html">Architecture</a></h3>
+      <p>Spaces that shape us. From sacred temples to modernist balance.</p>
+    </div>
+  </div>
+</section>
 </main>
 <footer class="site_footer">
 <div class="footer_container">

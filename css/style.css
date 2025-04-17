@@ -20,21 +20,21 @@
 }
 
 /* Body */
-body{
-    background-image: url("images/paper-texture.jpg");
-    /* image from this website:https://www.photos-public-domain.com/2012/05/24/ivory-off-white-paper-texture/ */
+body {
+    background-image: url("../images/paper-texture.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-color: #f4f1e9;
-    font-family: "Lora", serif; /* Font family of Lora with serif as backup */
+    background-color: #f4f1e9; /* Fallback color */;
+    font-family: "Lora", serif;
     color: #4a4a4a;
-     /* code taken from Flex homework */
-}
+  }
+
+
 .gallery{
-    background-image: url("images/paper-texture.jpg");
-     /* image from this website:https://www.photos-public-domain.com/2012/05/24/ivory-off-white-paper-texture/ */
+    background-image: url("../images/paper-texture.jpg");
+     /* image from this website:https://unsplash.com/photos/a-man-flying-a-kite-in-the-sky-cFnDFeQianA */
     background-repeat: repeat;
     background-size: cover;
     background-position: center;
@@ -44,6 +44,18 @@ body{
     position: relative;
 }
 
+.intro-gallery{
+    background-image: url("../images/paper-texture.jpg");
+    /* image from this website:https://unsplash.com/photos/a-man-flying-a-kite-in-the-sky-cFnDFeQianA */
+   background-repeat: repeat;
+   background-size: cover;
+   background-position: center;
+   background-attachment: scroll;
+   background-color: #f4f1e9;
+   padding: 3rem 1.5rem;
+   position: relative;
+}
+
 
 h1 {
     color: #2c2c3a;       /* deep ink blue */
@@ -51,13 +63,57 @@ h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.05);
+    text-align: center;
 }
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #7a5230;
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    color: #2c2c3a;
+    width: 0;
+    opacity: 1;
+    animation: typing 3.5s steps(25, end) forwards, blink 0.75s step-end 4;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink {
+    0%, 100% { border-color: #7a5230; }
+    50% { border-color: transparent; }
+  }
+
 p{
     font-family: "Lora", serif;
     font-size: 1rem;
     line-height: 1.7;
     color: #4a4a4a; /* or #333 for more contrast */
     margin-bottom: 1.25rem;
+}
+main.gallery h1 + p{
+  font-family: "Lora", serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #3a3a3a;
+  text-align: center;
+  letter-spacing: 0.4px;
+  margin: 0 auto 2.5rem auto;
+  position: relative;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border-left: 2px solid #d8cfc4;
+  border-right: 2px solid #d8cfc4;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.85),
+    rgba(253, 250, 246, 0.85)
+  );
+  box-shadow: inset 0 -1px 0 #eae4dc;
 }
 /* Header */
 header{
@@ -91,15 +147,47 @@ nav {
   }
 
 /* Navigation links class */
-.nav_links{
+.nav_links {
     list-style: none;
-    display: flex; /* enables flexbox display */
-    flex-direction: row; /* stacks the elements vertically */
+    display: flex;
+    flex-direction: row; /* stays horizontal */
     gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
 
-.nav_item a:hover {
-    color: #7a5230; /* warm bronze accent */
+.nav_item a {
+    text-decoration: none;
+    font-family: "Cormorant Garamond", serif;
+    color: #2c2c2c;           /* rich charcoal tone */
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    padding: 0.25rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .nav_item a:hover {
+    color: #7a5230;           /* warm bronze on hover */
+  }
+
+  .nav_item a::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 0%;
+    background-color: #7a5230;
+    transition: width 0.3s ease;
+    margin-top: 4px;
+  }
+
+  .nav_item a:hover::after {
+    width: 100%;
+  }
+
+  .nav_item a.active {
+    color: #7a5230;
+    font-weight: 500;
   }
 
 nav .nav_container {
@@ -115,7 +203,7 @@ nav .nav_container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem 2rem;  /* more vertical gap */
     padding: 2rem 1rem;
   }
   /* Each artwork item */
@@ -123,32 +211,38 @@ nav .nav_container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 250px;
-    text-align: center;
-  }
-
-  /* Image style */
-  .gallery_item img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    text-align: left;
+  
+    max-width: 260px;
+    width: 100%;               /* ensures caption matches image width */
+    background-color: transparent; /* if the image + caption handle styling */
+    padding: 0;
+    margin: 0;
+  
+    border: none;
+    box-shadow: none;
   }
 
   .gallery_item img:hover {
     transform: scale(1.03);
   }
 
-.caption {
-    line-height: 1.5;
-    color: #555;
-    font-family: "Lora", serif; /* Font family of Lora with serif as backup */
-    color: black;
+  .caption {
+    width: 100%;
     display: inline-block;
-    padding-top: .5em;
-    /* code is taken from stackoverflow:https://stackoverflow.com/questions/47039672/how-to-add-caption-underneath-imagethe-image-is-used-for-a-lightbox */
-    }
+    font-family: "Lora", serif;
+    font-size: 0.9rem;
+    color: #2c2c2c;
+    line-height: 1.5;
+  
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    border-top: 1px solid #eae4dc;
+    border-left: 4px solid #d8cfc4;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
 
 .lightboximage  {
     display: inline-flex;
@@ -176,7 +270,88 @@ nav .nav_container {
     width: 100%;
 }
 
+/* Section container */
+.collection-preview {
+    text-align: center;
+    margin-bottom: 4rem; /* creates space before footer */
+    padding: 2rem 1rem;
+  }
+  
+  /* Section title */
+  .collection-preview h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.75rem;
+    color: #2c2c3a;
+    margin-bottom: 2rem;
+  }
+  
+  /* Grid layout */
+  .preview-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  /* Individual card style */
+  .preview-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid #eae4dc;
+    border-left: 4px solid #7a5230;
+    padding: 1.5rem 1.25rem;
+    max-width: 300px;
+    text-align: left;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .preview-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Hover lift effect */
+  .preview-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  /* Headings inside cards */
+  .preview-card h3 {
+    margin: 0 0 0.5rem;
+    font-family: "Playfair Display", serif;
+    font-size: 1.2rem;
+  }
+  
+  .preview-card h3 a {
+    text-decoration: none;
+    color: #2c2c3a;
+    transition: color 0.3s ease;
+  }
+  
+  .preview-card h3 a:hover {
+    color: #7a5230;
+  }
+  
+  /* Description inside cards */
+  .preview-card p {
+    font-family: "Lora", serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+    margin: 0;
+  }
+
     @media (max-width: 800px) {
+        #logo {
+            height: 80px;         /* Increased height */
+            width: auto;
+            display: block;
+            object-fit: contain;
+            padding: 0.5rem 0;
+        }
         .nav_links {
           flex-direction: column;
           align-items: flex-start;
@@ -184,12 +359,23 @@ nav .nav_container {
           padding-top: 1rem;
           width: 100%;
         }
-        #logo {
-            height: 80px;         /* Increased height */
-            width: auto;
-            display: block;
-            object-fit: contain;
-            padding: 0.5rem 0;
+        .gallery_grid {
+            justify-content: flex-start; /* optional: align left for a more curated feel */
+            padding: 3rem 4rem;
+            gap: 2.5rem 3rem; /* more spacious layout */
+          }
+          .gallery_item {
+            max-width: 280px;
+            margin-bottom: 3rem;
+          }
+          .gallery_item img {
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          }
+          .caption {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            max-width: 90%;
           }
         .nav_container {
             align-items: center;
@@ -204,5 +390,52 @@ nav .nav_container {
           .footer_links {
             justify-content: center;
             width: 100%;
+        }
+        .collection-preview {
+            padding: 3rem 4rem;
+            margin-bottom: 5rem;
+          }
+        
+          .collection-preview h2 {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+          }
+        
+          .preview-grid {
+            justify-content: space-between;
+            gap: 2.5rem 3rem;
+            max-width: 960px;
+            margin: 0 auto;
+          }
+        
+          .preview-card {
+            max-width: 280px;
+            padding: 2rem 1.5rem;
+            border-left: 6px solid #7a5230;
+          }
+        
+          .preview-img {
+            margin-bottom: 1rem;
+            border-radius: 6px;
+          }
+        
+          .preview-card h3 {
+            font-size: 1.35rem;
+          }
+        
+          .preview-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+          }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation: none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+        .typewriter {
+          width: auto !important;
+          border-right: none !important;
         }
       }
