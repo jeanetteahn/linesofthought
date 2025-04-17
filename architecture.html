@@ -8,29 +8,87 @@
     <link href="dist/css/lightbox.css" rel="stylesheet" />
     <title>Personal Architecture Gallery</title>
 </head>
+<!-- alt-text taken from ChatGPT -->
+<!-- Source code taken from Week 11 Data Attributes from Jackie -->
+<!-- lightboximage class and span caption code is taken from stackoverflow:https://stackoverflow.com/questions/47039672/how-to-add-caption-underneath-imagethe-image-is-used-for-a-lightbox -->
+<!-- Navigation bar code taken from Flex homework -->
 <body>
 <header>
-    <h1>Architecture Gallery Showcase</h1>
-    <p>Here are my top favorite pieces of architecture from a variety of periods.</p>
+    <a class = "skip" href="#skip">Skip to Main Content</a>
+    <nav clas="navbar">
+        <div class="nav_container">
+        <a href="home.html" class="logo_link">
+        <img src="images/logo.png" alt="Logo for Lines of Thought featuring a black Ionic column on the left and stacked serif text reading “Lines of Thought” on the right." id = "logo">
+        </a>
+        <ul class="nav_links">
+          <li class="nav_item"><a href="home.html">Home</a></li>
+          <li class="nav_item"><a href="art.html">Art</a></li>
+          <li class="nav_item"><a href="sculpture.html">Sculpture</a></li>
+          <li class="nav_item"><a href="architecture.html">Architecture</a></li>
+        </ul>
+    </div>
+    </nav>
 </header>
-<main class="gallery">
-    <a href = "images/Chapelle_architecture.jpg" target="_blank" data-lightbox="architecture" data-title="tea" data-alt="fancy tea mug with black_tea">
-        <img src="images/Chapelle_architecture.jpg" width = "200" alt="fancy tea mug with black_tea">
-    <a href = "images/Alhambra_architecture.jpg" target="_blank" data-lightbox="architecture" data-title="tea" data-alt="fancy tea mug with black_tea">
-        <img src="images/Alhambra_architecture.jpg" width = "200" alt="fancy tea mug with black_tea">
-    <a href = "images/BasilicaVaticano_architecture.jpg" target="_blank" data-lightbox="ar" data-title="tea" data-alt="fancy tea mug with black_tea">
-        <img src="images/BasilicaVaticano_architecture.jpg" width = "200" alt="fancy tea mug with black_tea">
-    <a href = "images/AngkorWat_architecture.jpg" target="_blank" data-lightbox="architecture" data-title="tea" data-alt="fancy tea mug with black_tea">
-        <img src="images/AngkorWat_architecture.jpg" width = "200" alt="fancy tea mug with black_tea">
-    <a href = "images/Fallingwater_architecture.jpg" target="_blank" data-lightbox="architecture" data-title="tea" data-alt="fancy tea mug with black_tea">
-        <img src="images/Fallingwater_architecture.jpg" width = "200" alt="fancy tea mug with black_tea">
-    <a href = "images/HaedongYonggu_architecture.jpg" target="_blank" data-lightbox="architecture" data-title="tea" data-alt="fancy tea mug with black_tea">
-        <img src="images/HaedongYonggu_architecture.jpg" width = "200" alt="fancy tea mug with black_tea">
-    <a href = "images/HagiaSophia_architecture.jpg" target="_blank" data-lightbox="architecture" data-title="tea" data-alt="fancy tea mug with black_tea">
-        <img src="images/HagiaSophia_architecture.jpg" width = "200" alt="fancy tea mug with black_tea">
-    <a href = "images/Mezquita_architecture.jpg" target="_blank" data-lightbox="architecture" data-title="tea" data-alt="fancy tea mug with black_tea">
-        <img src="images/Mezquita_architecture.jpg" width = "200" alt="fancy tea mug with black_tea">
-<script src="dist/js/lightbox-plus-jquery.js"></script>
+<main id="skip" class="gallery">
+<h1>Architecture Gallery Showcase</h1>
+<p>Here are my top favorite pieces of architecture from a variety of periods.</p>
+<div class="gallery_grid">
+    <div class="gallery_item">
+    <a class="lightboximage" href = "images/Chapelle_architecture.jpg" target="_blank" data-lightbox="architecture" data-title="Sainte-Chapelle (France)" data-alt="Stained glass windows of Sainte-Chapelle fill the Gothic chapel with vibrant, colored light.">
+        <img src="images/Chapelle_architecture.jpg" width = "200" alt="Stained glass windows of Sainte-Chapelle fill the Gothic chapel with vibrant, colored light.">
+    </a>
+        <span class="caption">Sainte-Chapelle is a palatine chapel that was built by Louis IX to house the Crown of Thorns. Louis IX was king of France who was considered a saint during his lifetime and was canonized by the Catholic church after his death. I like this chapel due to its usage of stained glass that creates an ephemeral experience.</span>
+    </div>
+    <div class="gallery_item">
+        <a class="lightboximage" href = "images/Alhambra_architecture.jpg" target="_blank" data-lightbox="architecture" data-title="Alhambra of Granada" data-alt="Panoramic view of the Alhambra’s reddish stone palaces and towers set against forested hills and distant mountains at sunset.">
+        <img src="images/Alhambra_architecture.jpg" width = "200" alt="Panoramic view of the Alhambra’s reddish stone palaces and towers set against forested hills and distant mountains at sunset.">
+    </a>
+        <span class="caption">They are medieval palaces that were built by Nasrid dynasty rulers, who were the last of the Muslims to rule Spain. These palaces are known for their decorative architecture along with its fountains and gardens. I like this architecture because of how decorative its architecture is along its walls and ceilings with the Quranic script that can be breathtaking to see.</span>
+    </div>
+    <div class="gallery_item">
+        <a class="lightboximage" href = "images/BasilicaVaticano_architecture.jpg" target="_blank" data-lightbox="architecture" data-title="St. Peter’s Basilica (Vatican)" data-alt="Grand façade of St. Peter’s Basilica with towering columns, statues, and a central dome under a clear blue sky.">
+        <img src="images/BasilicaVaticano_architecture.jpg" width = "200" alt="Grand façade of St. Peter’s Basilica with towering columns, statues, and a central dome under a clear blue sky.">
+    </a>
+        <span class="caption">This basilica is built to house the remains of St. Peter resides below its floor level. This building has a complex history in terms of its construction as it used to be a chariot racing stadium before it was converted into a basilica by Constantine. There were several notable architects who worked on this building such as Michelangelo and Bernini. I like this architecture because its interior is breathtaking with its usage of domes.</span>
+    </div>
+    <div class="gallery_item">
+        <a class="lightboximage" href = "images/AngkorWat_architecture.jpg" target="_blank" data-lightbox="architecture" data-title="Angkor Wat (Cambodia)" data-alt="Angkor Wat temple towers rise behind palm trees, reflected in a still pond under a bright blue sky.">
+        <img src="images/AngkorWat_architecture.jpg" width = "200" alt="Angkor Wat temple towers rise behind palm trees, reflected in a still pond under a bright blue sky.">
+    </a>
+        <span class="caption">Angkor Wat is a Hindu temple and is one of the best preserved temples in the world. It is the magnum opus of  Khmer empire that means to duplicate the idea of heavens on earth. I like this temple because it shows the architectural prowess that can be often overlooked by its Western counterparts.</span>
+    </div>
+        <div class="gallery_item">
+        <a class="lightboximage" href = "images/Fallingwater_architecture.jpg" target="_blank" data-lightbox="architecture" data-title="Fallingwater (Mill Run, Pennsylvania, USA) by Frank Lloyd Wright" data-alt="Modern house cantilevered over a waterfall, surrounded by dense forest.">
+        <img src="images/Fallingwater_architecture.jpg" width = "200" alt="Modern house cantilevered over a waterfall, surrounded by dense forest.">
+    </a>
+        <span class="caption">Fallingwater is considered Wright’s magnum opus. The client commissioned Wright to build their summer home for a weekend retreat due to their shared love for nature. I like this architecture because of how it is integrated with the waterfall.</span>
+    </div>
+    <div class="gallery_item">
+        <a class="lightboximage" href = "images/HaedongYonggu_architecture.jpg" target="_blank" data-lightbox="architecture" data-title="Haedong Yonggungsa Temple (해동 용궁사)" data-alt="Haedong Yonggungsa Temple perched on a rocky coastline, with ornate rooftops and forested hills in the background.">
+        <img src="images/HaedongYonggu_architecture.jpg" width = "200" alt="Haedong Yonggungsa Temple perched on a rocky coastline, with ornate rooftops and forested hills in the background.">
+    </a>
+        <span class="caption">Haedong Yonggungsa temple is a Buddhist temple that is located in Busan, South Korea, the southernmost point of Korea. This temple was constructed in the Goryeo dynasty and is known for its unique location of being built along the shore line. I like this temple because of its location and how it connects harmoniously with the sea.</span>
+    </div>
+    <div class="gallery_item">
+        <a class="lightboximage" href = "images/HagiaSophia_architecture.jpg" target="_blank" data-lightbox="architecture" data-title="Hagia Sophia Grand Mosque" data-alt="Hagia Sophia with its massive central dome and four minarets, set against a clear blue sky in Istanbul.">
+        <img src="images/HagiaSophia_architecture.jpg" width = "200" alt="Hagia Sophia with its massive central dome and four minarets, set against a clear blue sky in Istanbul.">
+    </a>
+        <span class="caption">Hagia Sophia Grand is a secular building with a complex history. It was initially built as a cathedral when Istanbul was Constantinople and then converted into a mosque when Constantinople collapsed before finally converting to a museum for secular use. I like this architecture because it showcases how the architecture shifts in relation to he political landscape and preserves them.</span>
+    </div>
+    <div class="gallery_item">
+        <a class="lightboximage" href = "images/Mezquita_architecture.jpg" target="_blank" data-lightbox="architecture" data-title="Mezquita of Córdoba" data-alt="Aerial view of the Mezquita of Córdoba, with its large mosque-cathedral complex, courtyard, and bell tower amid a dense cityscape.">
+        <img src="images/Mezquita_architecture.jpg" width = "200" alt="Aerial view of the Mezquita of Córdoba, with its large mosque-cathedral complex, courtyard, and bell tower amid a dense cityscape.">
+    </a>
+        <span class="caption">They are medieval palaces that were built by Nasrid dynasty rulers, who were the last of the Muslims to rule Spain. These palaces are known for their decorative architecture along with its fountains and gardens. I like this architecture because of how decorative its architecture is along its walls and ceilings with the Quranic script that can be breathtaking to see.</span>
+    </div>
+    </div>
+        <script src="dist/js/lightbox-plus-jquery.js"></script>
 </main>
+<footer class="site_footer">
+    <div class="footer_container">
+      <p>&copy; 2025 Jeanette Ahn · Lines of Thought</p>
+    </div>
+</footer>
 </body>
+<script src="dist/js/lightbox-plus-jquery.js"></script>
 </html>

@@ -1,0 +1,208 @@
+
+.skip{
+    position:absolute;
+    top:-40px;
+    left:-1000px;
+    height:35px;
+    background-color:white;
+    /* skip code taken from SI 539 Midterm Exam */
+}
+.skip:focus{
+    top:20px;
+    left:10px;
+    /* skip code taken from SI 539 Midterm Exam */
+}
+/* Logo id */
+#logo{
+    width: 25px; /* Logo starts from the width of 25px */
+    animation: mymove 5s ease-in-out forwards; /* animation loads for 5 seconds when page is loaded */
+    /* code taken from Flex homework */
+}
+
+/* Body */
+body{
+    background-image: url("images/paper-texture.jpg");
+    /* image from this website:https://www.photos-public-domain.com/2012/05/24/ivory-off-white-paper-texture/ */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: #f4f1e9;
+    font-family: "Lora", serif; /* Font family of Lora with serif as backup */
+    color: #4a4a4a;
+     /* code taken from Flex homework */
+}
+.gallery{
+    background-image: url("images/paper-texture.jpg");
+     /* image from this website:https://www.photos-public-domain.com/2012/05/24/ivory-off-white-paper-texture/ */
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    background-color: #f4f1e9;
+    padding: 3rem 1.5rem;
+    position: relative;
+}
+
+
+h1 {
+    color: #2c2c3a;       /* deep ink blue */
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.05);
+}
+p{
+    font-family: "Lora", serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4a4a4a; /* or #333 for more contrast */
+    margin-bottom: 1.25rem;
+}
+/* Header */
+header{
+    display: flex; /* enables flexbox display */
+    flex-direction: row; /* stacks the elements horizontally */
+    align-items: center; /* centers the elements */
+     /* code taken from Flex homework */
+}
+
+#logo {
+    height: 60px;
+    width: auto;
+}
+
+nav {
+    background-color: #fdfaf6;
+    border-bottom: 1px solid #fdfaf6;
+    padding: 0.75rem 2rem;
+    font-family: "Cormorant Garamond", serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+  }
+.nav_container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+/* Navigation links class */
+.nav_links{
+    list-style: none;
+    display: flex; /* enables flexbox display */
+    flex-direction: row; /* stacks the elements vertically */
+    gap: 2rem;
+}
+
+.nav_item a:hover {
+    color: #7a5230; /* warm bronze accent */
+  }
+
+nav .nav_container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Gallery container */
+.gallery_grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+  /* Each artwork item */
+  .gallery_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 250px;
+    text-align: center;
+  }
+
+  /* Image style */
+  .gallery_item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .gallery_item img:hover {
+    transform: scale(1.03);
+  }
+
+.caption {
+    line-height: 1.5;
+    color: #555;
+    font-family: "Lora", serif; /* Font family of Lora with serif as backup */
+    color: black;
+    display: inline-block;
+    padding-top: .5em;
+    /* code is taken from stackoverflow:https://stackoverflow.com/questions/47039672/how-to-add-caption-underneath-imagethe-image-is-used-for-a-lightbox */
+    }
+
+.lightboximage  {
+    display: inline-flex;
+    flex-direction: column;
+    text-decoration: none;
+    /* code is taken from stackoverflow:https://stackoverflow.com/questions/47039672/how-to-add-caption-underneath-imagethe-image-is-used-for-a-lightbox */
+}
+
+.site_footer {
+    background-color: #eceae6;
+    border-top: 1px solid  #eceae6;
+    padding: 2rem 1.5rem;
+    font-family: 'Georgia', serif;
+    font-size: 0.9rem;
+    color: #333;
+    width: 100%;
+}
+
+.footer_container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+    @media (max-width: 800px) {
+        .nav_links {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+          padding-top: 1rem;
+          width: 100%;
+        }
+        #logo {
+            height: 80px;         /* Increased height */
+            width: auto;
+            display: block;
+            object-fit: contain;
+            padding: 0.5rem 0;
+          }
+        .nav_container {
+            align-items: center;
+            min-height: 100px;    /* Enough space for larger logo */
+        }
+        .footer_container {
+            flex-direction: column;
+            text-align: center;
+            gap: 1rem;
+            width: 100%;
+          }
+          .footer_links {
+            justify-content: center;
+            width: 100%;
+        }
+      }

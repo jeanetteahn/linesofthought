@@ -8,29 +8,87 @@
     <link href="dist/css/lightbox.css" rel="stylesheet" />
     <title>Personal Sculpture Gallery</title>
 </head>
+<!-- alt-text taken from ChatGPT -->
+<!-- Source code taken from Week 11 Data Attributes from Jackie -->
+<!-- lightboximage class and span caption code is taken from stackoverflow:https://stackoverflow.com/questions/47039672/how-to-add-caption-underneath-imagethe-image-is-used-for-a-lightbox -->
+<!-- Navigation bar code taken from Flex homework -->
 <body>
 <header>
-    <h1>Sculpture Gallery Showcase</h1>
-    <p>Here are my top favorite pieces of sculptures from a variety of periods.</p>
+    <a class = "skip" href="#skip">Skip to Main Content</a>
+    <nav clas="navbar">
+        <div class="nav_container">
+        <a href="home.html" class="logo_link">
+        <img src="images/logo.png" alt="Logo for Lines of Thought featuring a black Ionic column on the left and stacked serif text reading “Lines of Thought” on the right." id = "logo">
+        </a>
+        <ul class="nav_links">
+          <li class="nav_item"><a href="home.html">Home</a></li>
+          <li class="nav_item"><a href="art.html">Art</a></li>
+          <li class="nav_item"><a href="sculpture.html">Sculpture</a></li>
+          <li class="nav_item"><a href="architecture.html">Architecture</a></li>
+        </ul>
+    </div>
+    </nav>
 </header>
-<main class="gallery">
-<a href = "images/Continuity_sculpture.jpg" target="_blank" data-lightbox="sculpture" data-title="tea" data-alt="fancy tea mug with black_tea">
-    <img src="images/Continuity_sculpture.jpg" width = "200" alt="fancy tea mug with black_tea">
-<a href = "images/Pieta_sculpture.jpg" target="_blank" data-lightbox="sculpture" data-title="tea" data-alt="fancy tea mug with black_tea">
-    <img src="images/Pieta_sculpture.jpg" width = "200" alt="fancy tea mug with black_tea">
-<a href = "images/Apollo_sculpture.jpg" target="_blank" data-lightbox="sculpture" data-title="tea" data-alt="fancy tea mug with black_tea">
-    <img src="images/Apollo_sculpture.jpg" width = "200" alt="fancy tea mug with black_tea">
-<a href = "images/black_tea.jpg" target="_blank" data-lightbox="tea" data-title="tea" data-alt="fancy tea mug with black_tea">
-    <img src="images/black_tea.jpg" width = "200" alt="fancy tea mug with black_tea">
-<a href = "images/black_tea.jpg" target="_blank" data-lightbox="tea" data-title="tea" data-alt="fancy tea mug with black_tea">
-    <img src="images/black_tea.jpg" width = "200" alt="fancy tea mug with black_tea">
-<a href = "images/black_tea.jpg" target="_blank" data-lightbox="tea" data-title="tea" data-alt="fancy tea mug with black_tea">
-    <img src="images/black_tea.jpg" width = "200" alt="fancy tea mug with black_tea">
-<a href = "images/black_tea.jpg" target="_blank" data-lightbox="tea" data-title="tea" data-alt="fancy tea mug with black_tea">
-    <img src="images/black_tea.jpg" width = "200" alt="fancy tea mug with black_tea">
-<a href = "images/black_tea.jpg" target="_blank" data-lightbox="tea" data-title="tea" data-alt="fancy tea mug with black_tea">
-    <img src="images/black_tea.jpg" width = "200" alt="fancy tea mug with black_tea">
-<script src="dist/js/lightbox-plus-jquery.js"></script>
+<main id="skip" class="gallery">
+<h1>Sculpture Gallery Showcase</h1>
+<p>Here are my top favorite pieces of sculptures from a variety of periods.</p>
+<div class="gallery_grid">
+    <div class="gallery_item">
+<a class="lightboximage" href = "images/Continuity_sculpture.jpg" target="_blank" data-lightbox="sculpture" data-title="Unique Forms of Continuity in Space by Umberto Boccioni" data-alt="Abstract bronze figure striding forward, with flowing, aerodynamic forms suggesting motion.">
+    <img src="images/Continuity_sculpture.jpg" width = "200" alt="Abstract bronze figure striding forward, with flowing, aerodynamic forms suggesting motion.">
+</a>
+    <span class="caption">This metal sculpture depicts a marching figure that is forging ahead. This figure is symbolic of the Futurist movement showing the dynamic speed of the machine age. I like this sculpture because it depicts the fast paced culture that defines our modern era while taking allusions from classical Greek or Roman sculpture. </span>
+</div>
+<div class="gallery_item">
+<a class="lightboximage" href = "images/Pieta_sculpture.jpg" target="_blank" data-lightbox="sculpture" data-title="La Pietà di Michelangelo by Michelangelo" data-alt="Marble sculpture of Mary cradling the lifeless body of Jesus with serene sorrow.">
+    <img src="images/Pieta_sculpture.jpg" width = "200" alt="Marble sculpture of Mary cradling the lifeless body of Jesus with serene sorrow.">
+</a>
+    <span class="caption">This sculpture depicts Virgin Mary holding the dead body of Jesus after his crucifixion from the cross. This sculpture was commissioned to go on the old side of St Peter’s Basilica but now resides in New St. Peter’s Basilica in Rome. I like this sculpture because of how detailed the sculpture is in relation to clothing and human skin.</span>
+</div>
+<div class="gallery_item">
+    <a class="lightboximage" href = "images/Apollo_sculpture.jpg" target="_blank" data-lightbox="sculpture" data-title="Apollo and Daphne by Gian Lorenzo Bernini" data-alt="Marble sculpture of Apollo reaching for Daphne as she transforms into a tree.">
+    <img src="images/Apollo_sculpture.jpg" width = "200" alt="Marble sculpture of Apollo reaching for Daphne as she transforms into a tree.">
+</a>
+    <span class="caption">This sculpture depicts Apollo's pursuit of Daphne when struck by Cupid’s arrow, and Daphne makes a prayer to change her body to a tree due to this chase. This sculpture resides in the Borghese gallery in Rome. I like this sculpture because it shows the transformation from skin to wood.</span>
+</div>
+<div class="gallery_item">
+<a class="lightboximage" href = "images/BirdinSpace_sculpture.jpg" target="_blank" data-lightbox="sculpture" data-title="Bird in Space by Constantin Brâncuși" data-alt="Sleek, elongated bronze sculpture suggesting a bird in flight.">
+    <img src="images/BirdinSpace_sculpture.jpg" width = "200" alt="Sleek, elongated bronze sculpture suggesting a bird in flight.">
+</a>
+    <span class="caption">This sculpture depicts the movement of the bird in flight without any of its physical attributes. This sculpture is part of a series. I like this sculpture because of its simplicity of depicting movement in an abstract way.</span>
+</div>
+<div class="gallery_item">
+    <a class="lightboximage" href = "images/TeresaBernini_sculpture.jpg" target="_blank" data-lightbox="sculpture" data-title="Ecstasy of Saint Teresa by Gian Lorenzo Bernini" data-alt="Marble sculpture of Saint Teresa in ecstatic trance as an angel points a spear toward her heart.">
+    <img src="images/TeresaBernini_sculpture.jpg" width = "200" alt="Marble sculpture of Saint Teresa in ecstatic trance as an angel points a spear toward her heart.">
+</a>
+    <span class="caption">The sculpture depicts an episode where the saint describes the ecstasy of the pain experienced by an angel repeatedly piercing her heart multiple times. This sculpture resides in Cornaro Chapel in Rome, Italy. I like this sculpture because it gives an epithermal quality while adhering to the church’s architecture.</span>
+</div>
+<div class="gallery_item">
+    <a class="lightboximage" href = "images/GatesofHell_sculpture.jpg" target="_blank" data-lightbox="sculpture" data-title="The Gates of Hell by Auguste Rodin" data-alt="Bronze doors covered in swirling, dramatic figures depicting scenes from Dante’s Inferno.">
+    <img src="images/GatesofHell_sculpture.jpg" width = "200" alt="Bronze doors covered in swirling, dramatic figures depicting scenes from Dante’s Inferno.">
+</a>
+    <span class="caption">This sculpture depicts the agony and suffering that is universally experienced by humans. Rodin was initially inspired by Dante’s Inferno when creating this work. I like this sculpture because it is characterized by chaotic representations of figures yet adheres to the structured order of the doors.</span>
+</div>
+<div class="gallery_item">
+<a class="lightboximage" href = "images/Laocoon_sculpture.jpg" target="_blank" data-lightbox="sculpture" data-title="Laocoön and His Sons" data-alt="Marble sculpture of Laocoön and his sons struggling against coiled sea serpents.">
+    <img src="images/Laocoon_sculpture.jpg" width = "200" alt="Marble sculpture of Laocoön and his sons struggling against coiled sea serpents.">
+</a>
+    <span class="caption">This sculpture depicts Lacoon, the priest of Apollo, warning of taking the wooden horse into Troy, and Athena and Poseidon releasing serpents killing the priest and his sons in response. This sculpture is important because due to Lacoon’s warning, Aeneas was able to flee Troy and found Rome. I like this sculpture because it shows the twisting of figures in agony against the serpents.</span>
+</div>
+<div class="gallery_item">
+<a class="lightboximage" href = "images/Veiledvirgin_sculpture.jpg" target="_blank" data-lightbox="sculpture" data-title="The Veiled Virgin by Giovanni Strazza" data-alt="Marble bust of the Virgin Mary with a delicate veil carved to appear translucent.">
+    <img src="images/Veiledvirgin_sculpture.jpg" width = "200" alt="Marble bust of the Virgin Mary with a delicate veil carved to appear translucent.">
+</a>
+    <span class="caption">This sculpture depicts a veiled Virgin Mary with her eyes closed and her head tilted downward. This sculpture was an important national symbol to the Italian people as it symbolized Italy as a unified country. I like this sculpture because it shows the artist’s prowess to manipulate marble with how its drapery envelops Virgin Mary.</span>
+</div>
+</div>
+    <script src="dist/js/lightbox-plus-jquery.js"></script>
 </main>
+<footer class="site_footer">
+    <div class="footer_container">
+      <p>&copy; 2025 Jeanette Ahn · Lines of Thought</p>
+    </div>
+</footer>
 </body>
+<script src="dist/js/lightbox-plus-jquery.js"></script>
 </html>
