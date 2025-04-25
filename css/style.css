@@ -289,6 +289,7 @@ nav {
     border-left: 4px solid #d8cfc4;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     box-sizing: border-box;
+     /* code is taken from stackoverflow:https://stackoverflow.com/questions/47039672/how-to-add-caption-underneath-imagethe-image-is-used-for-a-lightbox */
   }
 
 /* Lightbox image code */
