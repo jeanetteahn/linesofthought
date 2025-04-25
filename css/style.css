@@ -14,9 +14,9 @@
 }
 /* Logo id */
 #logo{
-    width: 25px; /* Logo starts from the width of 25px */
-    animation: mymove 5s ease-in-out forwards; /* animation loads for 5 seconds when page is loaded */
-    /* code taken from Flex homework */
+  height: 80px;         /* Increase for better visibility */
+  width: 100%;
+  display: block;
 }
 
 /* Body */
@@ -30,32 +30,6 @@ body {
     font-family: "Lora", serif;
     color: #4a4a4a;
   }
-
-
-.gallery{
-    background-image: url("../images/paper-texture.jpg");
-     /* image from this website:https://unsplash.com/photos/a-man-flying-a-kite-in-the-sky-cFnDFeQianA */
-    background-repeat: repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
-    background-color: #f4f1e9;
-    padding: 3rem 1.5rem;
-    position: relative;
-}
-
-.intro-gallery{
-    background-image: url("../images/paper-texture.jpg");
-    /* image from this website:https://unsplash.com/photos/a-man-flying-a-kite-in-the-sky-cFnDFeQianA */
-   background-repeat: repeat;
-   background-size: cover;
-   background-position: center;
-   background-attachment: scroll;
-   background-color: #f4f1e9;
-   padding: 3rem 1.5rem;
-   position: relative;
-}
-
 
 h1 {
     color: #2c2c3a;       /* deep ink blue */
@@ -95,17 +69,19 @@ p{
     color: #4a4a4a; /* or #333 for more contrast */
     margin-bottom: 1.25rem;
 }
-main.gallery h1 + p{
+
+main.gallery h1 + p,
+main.bibliography h1 + p {
   font-family: "Lora", serif;
-  font-size: 1.2rem;
-  line-height: 1.8;
+  font-size: 1.1rem; /* slightly smaller for mobile */
+  line-height: 1.7;
   color: #3a3a3a;
   text-align: center;
   letter-spacing: 0.4px;
-  margin: 0 auto 2.5rem auto;
-  position: relative;
-  padding: 0.5rem 1rem;
+  margin: 0 auto 2rem auto;
+  padding: 0.75rem 1rem;
   width: 100%;
+  box-sizing: border-box; /* ensures padding doesn’t cause overflow */
   border-left: 2px solid #d8cfc4;
   border-right: 2px solid #d8cfc4;
   background: linear-gradient(
@@ -114,7 +90,71 @@ main.gallery h1 + p{
     rgba(253, 250, 246, 0.85)
   );
   box-shadow: inset 0 -1px 0 #eae4dc;
+  overflow-wrap: break-word; /* prevents long words from overflowing */
+  word-break: break-word;
 }
+  .bibliography {
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+  
+  .bibliography h1 {
+    text-align: center;
+    font-size: 1.5 rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .bibliography p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: 0 auto 2rem auto;
+    text-align: center;
+    max-width: 800px;
+  }
+  .gallery, .intro-gallery {
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+
+  .gallery h1,
+  .intro-gallery h1 {
+    text-align: center;
+    font-size: 1.5 rem;
+    margin-bottom: 1.5rem;
+  }
+  .gallery p, .intro-gallery p {
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+  }
+
+  .sources {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 1rem;
+  }
+  
+  .sources > div {
+    padding: 1.5rem;
+    border: 1px solid #e0dcd5;
+    border-radius: 6px;
+    background-color: #fdfaf6;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .sources h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #d8cfc4;
+    padding-bottom: 0.5rem;
+  }
+  
+  .sources p {
+    margin: 0.25rem 0;
+  }
+  
 /* Header */
 header{
     display: flex; /* enables flexbox display */
@@ -124,8 +164,9 @@ header{
 }
 
 #logo {
-    height: 60px;
-    width: auto;
+  height: 70px;         /* Feel free to adjust 60–80px */
+  width: auto;          /* Maintains natural aspect ratio */
+  display: block;
 }
 
 nav {
@@ -135,22 +176,19 @@ nav {
     font-family: "Cormorant Garamond", serif;
     position: sticky;
     top: 0;
-    z-index: 1000;
     width: 100%;
   }
 .nav_container {
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;     /* Stack logo and links vertically */
+  align-items: center;        /* Center logo and nav links */
   }
 
 /* Navigation links class */
 .nav_links {
     list-style: none;
     display: flex;
-    flex-direction: row; /* stays horizontal */
+    flex-direction: column; /* stays horizontal */
     gap: 2rem;
     margin: 0;
     padding: 0;
@@ -190,21 +228,12 @@ nav {
     font-weight: 500;
   }
 
-nav .nav_container {
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
 /* Gallery container */
 .gallery_grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2.5rem 2rem;  /* more vertical gap */
-    padding: 2rem 1rem;
   }
   /* Each artwork item */
   .gallery_item {
@@ -212,6 +241,8 @@ nav .nav_container {
     flex-direction: column;
     align-items: center;
     text-align: left;
+    align-items: stretch;
+    flex: 1 1 260px;
   
     max-width: 260px;
     width: 100%;               /* ensures caption matches image width */
@@ -222,24 +253,32 @@ nav .nav_container {
     border: none;
     box-shadow: none;
   }
+  .gallery_item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 4px 4px 0 0;
+  }
 
   .gallery_item img:hover {
     transform: scale(1.03);
   }
 
   .caption {
-    width: 100%;
     display: inline-block;
     font-family: "Lora", serif;
     font-size: 0.9rem;
     color: #2c2c2c;
     line-height: 1.5;
-  
+
+    flex-grow: 1;
+    width: 100%;
+    padding: 1rem;
     background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     border-top: 1px solid #eae4dc;
     border-left: 4px solid #d8cfc4;
-    padding: 1rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     box-sizing: border-box;
   }
 
@@ -270,112 +309,165 @@ nav .nav_container {
     width: 100%;
 }
 
-/* Section container */
+/* Shared mobile-first styles (apply everywhere by default) */
 .collection-preview {
-    text-align: center;
-    margin-bottom: 4rem; /* creates space before footer */
-    padding: 2rem 1rem;
-  }
-  
-  /* Section title */
-  .collection-preview h2 {
-    font-family: "Playfair Display", serif;
-    font-size: 1.75rem;
-    color: #2c2c3a;
-    margin-bottom: 2rem;
-  }
-  
-  /* Grid layout */
-  .preview-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-  }
-  
-  /* Individual card style */
-  .preview-card {
-    background-color: rgba(255, 255, 255, 0.95);
-    border: 1px solid #eae4dc;
-    border-left: 4px solid #7a5230;
-    padding: 1.5rem 1.25rem;
-    max-width: 300px;
-    text-align: left;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-  }
-  
-  .preview-img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 0.75rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  }
+  padding: 2rem 1rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
 
-  /* Hover lift effect */
-  .preview-card:hover {
-    transform: translateY(-4px);
-  }
-  
-  /* Headings inside cards */
-  .preview-card h3 {
-    margin: 0 0 0.5rem;
-    font-family: "Playfair Display", serif;
-    font-size: 1.2rem;
-  }
-  
-  .preview-card h3 a {
-    text-decoration: none;
-    color: #2c2c3a;
-    transition: color 0.3s ease;
-  }
-  
-  .preview-card h3 a:hover {
-    color: #7a5230;
-  }
-  
-  /* Description inside cards */
-  .preview-card p {
-    font-family: "Lora", serif;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #4a4a4a;
-    margin: 0;
-  }
+.collection-preview h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.75rem;
+  color: #2c2c3a;
+  margin-bottom: 2rem;
+}
 
-    @media (max-width: 800px) {
-        #logo {
-            height: 80px;         /* Increased height */
-            width: auto;
-            display: block;
-            object-fit: contain;
-            padding: 0.5rem 0;
-        }
-        .nav_links {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 1rem;
-          padding-top: 1rem;
+.preview-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.preview-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #eae4dc;
+  border-left: 4px solid #7a5230;
+  padding: 1.5rem 1.25rem;
+  max-width: 300px;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.preview-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.preview-card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem;
+}
+
+.preview-card h3 a {
+  text-decoration: none;
+  color: #2c2c3a;
+  transition: color 0.3s ease;
+}
+
+.preview-card h3 a:hover {
+  color: #7a5230;
+}
+
+.preview-card p {
+  font-family: "Lora", serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+  margin: 0;
+}
+
+.preview-card:hover {
+  transform: translateY(-4px);
+}
+    @media (min-width: 800px) {
+      #logo {
+        height: 90px;  /* logo height of 90px*/
+        margin: 0;      /* Remove centering on desktop */
+      }
+        .nav_container {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
           width: 100%;
         }
-        .gallery_grid {
-            justify-content: flex-start; /* optional: align left for a more curated feel */
-            padding: 3rem 4rem;
-            gap: 2.5rem 3rem; /* more spacious layout */
+      
+        .nav_links {
+          list-style: none;
+          display: flex;
+          flex-direction: row; /* stays horizontal */
+          gap: 1.5rem; /* tighter spacing between nav items */
+          margin: 0;
+          padding: 0;
+      }
+      .gallery_grid {
+        justify-content: flex-start;     /* align items to the left for desktop */
+        gap: 3rem 2rem;                  /* increase horizontal spacing a bit */
+        padding: 3rem 2rem;              /* more breathing room on wide screens */
+      }
+    
+      .gallery_item {
+        max-width: 280px;               /* slightly wider cards for desktop */
+        margin: 0;                      /* in case any mobile margin is set */
+      }
+    
+      .caption {
+        font-size: 1rem;                /* improve readability on larger screens */
+        padding: 1.25rem;               /* more comfortable padding */
+      }
+          .bibliography p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin: 0 auto 2.5rem auto;
+            text-align: center;
+            padding: 0.5rem 2rem;
+            max-width: 750px;
+            background: linear-gradient(
+              to bottom,
+              rgba(255, 255, 255, 0.85),
+              rgba(253, 250, 246, 0.85)
+            );
+            border-left: 2px solid #d8cfc4;
+            border-right: 2px solid #d8cfc4;
+            box-shadow: inset 0 -1px 0 #eae4dc;
           }
-          .gallery_item {
-            max-width: 280px;
-            margin-bottom: 3rem;
+        
+          .sources {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
           }
-          .gallery_item img {
-            border-radius: 6px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        
+          .sources > div {
+            background-color: #fdfaf6;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #e0dcd5;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease;
           }
-          .caption {
-            font-size: 0.95rem;
+        
+          .sources > div:hover {
+            transform: translateY(-5px);
+          }
+        
+          .sources h2 {
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            border-bottom: 1px solid #d8cfc4;
+            padding-bottom: 0.5rem;
+            text-align: center;
+            color: #4a403a;
+          }
+        
+          .sources p {
+            margin: 0.5rem 0;
             line-height: 1.6;
-            max-width: 90%;
+            font-size: 1rem;
+            color: #3a3a3a;
+          }
+          .sources p {
+            margin: 0.25rem 0;
           }
         .nav_container {
             align-items: center;
@@ -392,41 +484,41 @@ nav .nav_container {
             width: 100%;
         }
         .collection-preview {
-            padding: 3rem 4rem;
-            margin-bottom: 5rem;
-          }
-        
-          .collection-preview h2 {
-            font-size: 2rem;
-            margin-bottom: 2.5rem;
-          }
-        
-          .preview-grid {
-            justify-content: space-between;
-            gap: 2.5rem 3rem;
-            max-width: 960px;
-            margin: 0 auto;
-          }
-        
-          .preview-card {
-            max-width: 280px;
-            padding: 2rem 1.5rem;
-            border-left: 6px solid #7a5230;
-          }
-        
-          .preview-img {
-            margin-bottom: 1rem;
-            border-radius: 6px;
-          }
-        
-          .preview-card h3 {
-            font-size: 1.35rem;
-          }
-        
-          .preview-card p {
-            font-size: 1rem;
-            line-height: 1.7;
-          }
+          padding: 3rem 2rem;
+          margin-bottom: 5rem;
+          max-width: 1200px; /* Optional: Prevent overly wide layouts */
+          margin-left: auto;
+          margin-right: auto;
+        }
+      
+        .collection-preview h2 {
+          font-size: 2rem;
+          margin-bottom: 2.5rem;
+        }
+      
+        .preview-grid {
+          display: flex;
+          justify-content: space-between; /* Distribute cards evenly */
+          gap: 2.5rem 2rem; /* row / column gap */
+          flex-wrap: nowrap; /* Ensure cards stay in a single row */
+        }
+      
+        .preview-card {
+          padding: 2rem 1.5rem;
+          width: calc(33.333% - 2rem); /* Flexible width accounting for gap */
+          min-width: 250px; /* Fallback for very large screens */
+        }
+      
+        .preview-card h3 {
+          font-size: 1.3rem;
+          margin-bottom: 1rem; /* Better spacing */
+        }
+      
+        .preview-card p {
+          font-size: 1rem;
+          line-height: 1.5; /* Improved readability */
+          overflow-wrap: break-word; /* Prevent text overflow */
+        }
       }
       @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after {
