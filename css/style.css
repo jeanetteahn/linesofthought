@@ -164,7 +164,7 @@ header{
 }
 
 #logo {
-  height: 70px;         /* Feel free to adjust 60–80px */
+  height: 70px;         
   width: auto;          /* Maintains natural aspect ratio */
   display: block;
 }
@@ -381,6 +381,21 @@ nav {
   transform: translateY(-4px);
 }
     @media (min-width: 800px) {
+
+      .skip{
+        position:absolute;
+        top:-40px;
+        left:-1000px;
+        height:35px;
+        background-color:white;
+        /* skip code taken from SI 539 Midterm Exam */
+      }
+      .skip:focus{
+        top:20px;
+        left:10px;
+        /* skip code taken from SI 539 Midterm Exam */
+      }
+
       #logo {
         height: 90px;  /* logo height of 90px*/
         margin: 0;      /* Remove centering on desktop */
